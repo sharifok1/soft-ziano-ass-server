@@ -30,6 +30,7 @@ async function run(){
     const ticketInfo = ticketCollection.find({});
     const output = await ticketInfo.toArray();
     res.json(output)
+
   })
 
     
