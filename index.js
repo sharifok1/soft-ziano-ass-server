@@ -20,13 +20,12 @@ async function run(){
     const ticketCollection = database.collection('TicketInfo');
 
 
-   //Post ticket information
+
    app.post('/ticketInfo', async(req,res)=>{
     const ticketInfo = req.body;
     const output = await ticketCollection.insertOne(ticketInfo);
   })
 
-  //Get ticket information
   app.get('/ticketInfo', async(req, res)=>{
     const ticketInfo = ticketCollection.find({});
     const output = await ticketInfo.toArray();
